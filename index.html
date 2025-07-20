@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Base - Dashboard de Ferramentas de IA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <!-- Sistema de Autenticação -->
+    <script src="auth.js"></script>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Trip Base</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#" data-category="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>Todas as Ferramentas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="veo-video">
+                            <i class="fas fa-video"></i>
+                            <span>VEO-3 / Vídeo / Prompts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="copywriting">
+                            <i class="fas fa-pen-nib"></i>
+                            <span>Copywriting / Vendas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="infoprodutos">
+                            <i class="fas fa-box"></i>
+                            <span>Infoprodutos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="estrategia">
+                            <i class="fas fa-chess"></i>
+                            <span>Estratégia / Negócios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="social-media">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Social Media</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="automacao">
+                            <i class="fas fa-cogs"></i>
+                            <span>Automação / Dev</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-category="design">
+                            <i class="fas fa-palette"></i>
+                            <span>Design / Imagens</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-top">
+                    <h1>Ferramentas de Inteligência Artificial</h1>
+                    <div class="header-right">
+                        <div class="stats">
+                            <span class="tool-count">300+ ferramentas disponíveis</span>
+                        </div>
+                        <!-- Menu do usuário será inserido aqui pelo auth.js -->
+                    </div>
+                </div>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar ferramentas...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Todas</button>
+                        <button class="filter-btn" data-filter="free">Gratuitas</button>
+                        <button class="filter-btn" data-filter="premium">Premium</button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="tools-grid" id="toolsGrid">
+                <!-- Tools will be dynamically inserted here -->
+            </section>
+
+            <div class="loading" id="loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Carregando ferramentas...</span>
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>Nenhuma ferramenta encontrada</h3>
+                <p>Tente ajustar sua busca ou filtros</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
