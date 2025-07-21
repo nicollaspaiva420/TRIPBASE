@@ -1903,3 +1903,17 @@ window.importToolsData = function(data) {
     }
 };
 
+
+,
+    {
+        "id": 162,
+        "name": "Lovable 2.0",
+        "category": "automacao",
+        "categoryName": "Automação / N8N / Dev",
+        "description": "Ferramenta de IA para automação e desenvolvimento.",
+        "icon": "fas fa-cogs",
+        "type": "premium",
+        "url": "https://lovable.dev/"
+    }
+];
+
